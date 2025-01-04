@@ -1,8 +1,7 @@
 
-ultralytics>=8.3.0
-matplotlib
-opencv-python
+pandas
 numpy
+matplotlib
+scikit-learn
 torch
-torchvision
-torchaudio
+lightning
