@@ -15,7 +15,7 @@ This application focuses on forecasting the daily exchange rates of eight foreig
   - [Docker Setup (Optional)](#docker-setup-optional)
 - [Usage](#usage)
   - [Run Main Script](#run-main-script)
-  - [Run Each Source Script (Optional)](#run-each-source-script-optional)
+  - [Run Each Source Module (Optional)](#run-each-source-module-optional)
     - [Data Preparation](#data-preparation)
     - [Training](#training)
     - [Evaluation](#evaluation)
@@ -90,25 +90,25 @@ The time series plots of observed versus predicted exchange rates for each forec
 
 ```
 forecasting-exchange-rate/
-├── configs/                      # Pre-trained transformer weight files
-├── data/                         # Dataset
-│   ├── preprocessed/             # Preprocessed dataset
-│   └── raw/                      # Raw downloaded file
-├── Dockerfile                    # Docker setup
-├── environment.yml               # Conda environment setup
-├── LICENSE                       # Project license
-├── main.py                       # Main pipeline script
-├── README.md                     # Project README
-├── requirements.txt              # Python dependencies
-├── results/                      # Outputs from inference and evaluation
-│   ├── evaluation_metrics_day_*.csv # Evaluation metrics CSVs
-│   └── plot_day_*.png            # Observed versus Predicted plots
-├── src/                          # Source code
-│   ├── data.py                   # Data preparation script
-│   ├── eval.py                   # Evaluation script
-│   ├── infer.py                  # Inference script
-│   └── train.py                  # Training script
-└── transformer.png               # Illustration of a transformer
+├── configs/                             # Pre-trained transformer weight files
+├── data/                                # Dataset
+│   ├── preprocessed/                    # Preprocessed dataset
+│   └── raw/                             # Raw downloaded file
+├── Dockerfile                           # Docker setup
+├── environment.yml                      # Conda environment setup
+├── LICENSE                              # Project license
+├── main.py                              # Main pipeline script
+├── README.md                            # Project README
+├── requirements.txt                     # Python dependencies
+├── results/                             # Outputs from inference and evaluation
+│   ├── evaluation_metrics_day_*.csv     # Evaluation metrics CSVs
+│   └── plot_day_*.png                   # Observed versus Predicted plots
+├── src/                                 # Source code
+│   ├── data.py                          # Data preparation script
+│   ├── eval.py                          # Evaluation script
+│   ├── infer.py                         # Inference script
+│   └── train.py                         # Training script
+└── transformer.png                      # Illustration of a transformer
 ```
 
 ## Installation
@@ -155,24 +155,24 @@ forecasting-exchange-rate/
    python main.py
    ```
 
-### Run Each Source Script (Optional)
+### Run Each Source Module (Optional)
 
 1. Data preparation: Preprocess the dataset.
    ```bash
-   python src/data.py
+   python -m src.data
    ```
 
 2. Training: Train a transformer model.
    ```bash
-   python src/train.py
+   python -m src.train
    ```
 
 3. Evaluation: Evaluate the transformer model.
    ```bash
-   python src/eval.py
+   python -m src.eval
    ```
 
 4. Inference: Run inference on the test period.
    ```bash
-   python src/infer.py
+   python -m src.infer
    ```
